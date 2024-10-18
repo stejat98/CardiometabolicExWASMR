@@ -16,7 +16,7 @@ load("adjustments_survival_analysis.Rdata")
 
 
 
-data <- read.fst("all_cause_mort_data_exposures_full.fst")
+data <- read.fst("incident_ExWAS_input_data.fst")
 data <- data %>% filter(f.21000.0.0 %in% c("British","Irish", "Any other white background"))
 
 adjustments <- c(adjustments, "x.738")
