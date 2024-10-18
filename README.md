@@ -7,4 +7,4 @@ We created the repository to contain the code for the project "Biobank-scale exp
 This repository has scripts written in R to perform ExWAS (Exposome-wide Association Study) for prevalent and incident outcomes in the UK Biobank. Additionally, we perform a two sample mendelian randomization (MR) using genetic instruments for exposures in the UKB and testing on FinnGEN.
 
 
-[Figure_1.pdf](https://github.com/user-attachments/files/17435015/Figure_1.pdf)
+![Figure_1](https://github.com/user-attachments/assets/44e0cf60-ac61-4433-bd97-c0689ebd4dce)
