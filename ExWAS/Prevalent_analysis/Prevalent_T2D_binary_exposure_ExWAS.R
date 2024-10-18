@@ -5,20 +5,20 @@ library(biglm)
 library(broom)
 library(fst)
 
-source("/home/st320/Baseline_PEWAS_Logistic_Functions_script.R") 
+source("Baseline_PEWAS_Logistic_Functions_script.R") 
 
 
 
-load("/home/st320/UKB_PEWAS/adjustments_survival_analysis.Rdata")
+load("adjustments_survival_analysis.Rdata")
 
 
 
-data <- read.fst("/n/groups/patel/sivateja/UKB/prevalent_t2d_ExWAS_input_data_08_31_2024.fst")
+data <- read.fst("prevalent_t2d_ExWAS_input_data.fst")
 
 data <- data %>% filter(f.21000.0.0 %in% c("British","Irish", "Any other white background"))
 
 
-load("/home/st320/UKB_PEWAS/binary_exposures.Rdata")
+load("binary_exposures.Rdata")
 
 exposures <- binvals[-length(binvals)]
 
@@ -29,4 +29,4 @@ for (exposureCol in exposures){
 
 ## run EWAS for specified phenotype (Baseline covariates) [extract p-values, etc.]
 EWASLogistic(data=data, depvar = "prevalent_t2d"
-             ,adjustments = adjustments,exposures=exposures,outFileName = sprintf("/n/groups/patel/sivateja/UKB/PEWAS_results/Prevalent_T2D_Binary_Exposures_Baseline_Actual_03_29_22_Baseline_Pheno%sOverall_biglm_results", "T2D"))
+             ,adjustments = adjustments,exposures=exposures,outFileName = sprintf("Prevalent_T2D_Binary_Exposures_Baseline_Actual_03_29_22_Baseline_Pheno%sOverall_biglm_results", "T2D"))
