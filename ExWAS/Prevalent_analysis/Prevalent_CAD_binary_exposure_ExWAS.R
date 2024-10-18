@@ -13,7 +13,7 @@ load("adjustments_survival_analysis.Rdata")
 
 
 ## load input data file containing exposures and prevalent disease outcome data
-data <- read.fst("prevalent_disease_ExWAS_input_data_08_31_2024.fst")
+data <- read.fst("prevalent_disease_ExWAS_input_data.fst")
 data <- data %>% filter(f.21000.0.0 %in% c("British","Irish", "Any other white background"))
 
 
