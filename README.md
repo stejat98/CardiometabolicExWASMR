@@ -110,94 +110,45 @@ ExWAS/
 │       └── Prevalent_T2D_untransformed_exposure_ExWAS.R
 └── README.md
 ```
-
 ---
+## ▶️ Running Scripts from Command Line
 
-### ▶️ **Running ExWAS Analyses**
-
-#### 1. **Incident Analysis**
-- Scripts for binary and untransformed (continuous) variables are located under:
-  - `ExWAS/Incident_analysis/binary/`
-  - `ExWAS/Incident_analysis/untransformed/`
-
-#### Run Binary Models
-```r
-# Cox model for CAD with binary exposure
-source("ExWAS/Incident_analysis/binary/Cox_CAD_binary_exposure_ExWAS.R")
+To run any R script from the command line or terminal, use the following command:
+```bash
+Rscript path/to/script.R
 ```
 
-#### Run Untransformed Models
-```r
-# Cox model for CAD with untransformed exposure
-source("ExWAS/Incident_analysis/untransformed/Cox_CAD_untransformed_exposure_ExWAS.R")
+
+### 1. **Run ExWAS Scripts from Command Line**
+- Example: Run Cox model for CAD with binary exposure:
+```bash
+Rscript ExWAS/Incident_analysis/binary/Cox_CAD_binary_exposure_ExWAS.R
 ```
 
----
-
-#### 2. **Prevalent Analysis**
-- Scripts for binary and untransformed (continuous) variables are located under:
-  - `ExWAS/Prevalent_analysis/binary/`
-  - `ExWAS/Prevalent_analysis/untransformed/`
-
-#### Run Binary Models
-```r
-# Prevalent model for CAD with binary exposure
-source("ExWAS/Prevalent_analysis/binary/Prevalent_CAD_binary_exposure_ExWAS.R")
-```
-
-#### Run Untransformed Models
-```r
-# Prevalent model for CAD with untransformed exposure
-source("ExWAS/Prevalent_analysis/untransformed/Prevalent_CAD_untransformed_exposure_ExWAS.R")
+- Example: Run prevalent model for T2D with untransformed exposure:
+```bash
+Rscript ExWAS/Prevalent_analysis/untransformed/Prevalent_T2D_untransformed_exposure_ExWAS.R
 ```
 
 ---
 
-## 🔬 Mendelian Randomization (MR) Analysis
-
-### 📂 MR Directory Structure
-```
-MR/
-├── compute_mr.R                            # Core MR function used in both analyses
-├── CAD_all_exposures_bidirectional_MR_analysis.R   # MR analysis for CAD exposures
-├── t2d_all_exposures_bidirectional_MR_analysis.R   # MR analysis for T2D exposures
-└── README.md
+### 2. **Run MR Scripts from Command Line**
+- Example: Run CAD MR analysis:
+```bash
+Rscript MR/CAD_all_exposures_bidirectional_MR_analysis.R
 ```
 
----
-
-### ▶️ **Running MR Analyses**
-
-#### 1. **Load the `compute_mr` Function**
-The `compute_mr.R` file is sourced by both MR analysis scripts. Ensure it is loaded before running any MR script.
-
-```r
-source("MR/compute_mr.R")
+- Example: Run T2D MR analysis:
+```bash
+Rscript MR/t2d_all_exposures_bidirectional_MR_analysis.R
 ```
 
-#### 2. **Run CAD MR Analysis**
-```r
-source("MR/CAD_all_exposures_bidirectional_MR_analysis.R")
-```
-
-#### 3. **Run T2D MR Analysis**
-```r
-source("MR/t2d_all_exposures_bidirectional_MR_analysis.R")
-```
 
 ---
 
 ## 📈 Results and Output
 - Results will be saved in the `results/` directory.
 - Each exposure will generate results files with MR estimates, heterogeneity tests, and sensitivity analyses.
-
----
-
-## 🛠️ Troubleshooting
-
-- **Missing Packages:** Make sure all required packages are installed.
-- **Path Issues:** Set the working directory correctly using `setwd()` before running any script.
-- **API Access:** If using external APIs for GWAS data in MR, ensure access is correctly configured.
 
 ---
 
