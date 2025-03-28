@@ -113,12 +113,6 @@ ExWAS/
 ---
 ## ▶️ Running Scripts from Command Line
 
-To run any R script from the command line or terminal, use the following command:
-```bash
-Rscript path/to/script.R
-```
-
-
 ### 1. **Run ExWAS Scripts from Command Line**
 - Example: Run Cox model for CAD with binary exposure:
 ```bash
